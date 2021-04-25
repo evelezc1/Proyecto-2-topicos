@@ -6,7 +6,7 @@
 
 Juan Camilo Marin Navia <[jcmarinn@eafit.edu.co](mailto:jcmarinn@eafit.edu.co)>
 
-Estefania Velez Cortez <[evelezc1@eafit.edu.co](mailto:evelezc1@eafit.edu.co)>
+Estefania Velez Cortes <[evelezc1@eafit.edu.co](mailto:evelezc1@eafit.edu.co)>
 
 ### Sobre este repositorio
 
