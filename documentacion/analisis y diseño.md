@@ -25,49 +25,66 @@
 
 ## 3. Github del Proyecto
 
+https://github.com/evelezc1/Proyecto-2-topicos
+
 ## 4. Requisitos
 
-1. Disponibilidad  
+1. Funcionales y No Funcionales  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
    | | | |
    | | | |
    | | | |
 
-2. Rendimiento  
+2. Disponibilidad  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
-   | | | |
-   | | | |
-   | | | |
+   | Sistema de monitoreo | | |
+   | Balanceador de carga | | |
+   | Crecimiento Horizontal | | |
+   | Disponibilidad en capa de servicios | | |
+   | Disponibilidad en capa de persistencia | | |
 
-3. Seguridad  
+3. Rendimiento  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
-   | | | |
-   | | | |
-   | | | |
+   | Tiempo de respuesta | | |
+   | Concurrencia | | |
+   | CDN & Caching | | |
+
+4. Seguridad  
+   | Requisito | Descripcion | Implementacion |
+   |------------|-------------|----------------|
+   | Redes Privadas/NAT | | |
+   | Autentication de doble factor | | |
+   | Autenticacion SSO - OAuth | | |
+   | Manejo del protocolo HTTPS | | |
 
 ## 5. Diseño Escalable
 
 1. Patrones de arquitectura
 
    - Mejores Practicas
-     - 1
-     - 2
-     - 3
-     - 4
+     - Minimizar la transferencia de datos por cable
+     - Carga de datos bajo demanda
    - Seleccion de tacticas
-     - 1
-     - 2
-     - 3
-     - 4
+     - Carga de Datos asincronica
+     - Cache & CDN
+     - Compresion de archivos
+     - Sesion sin estado
    - Decisiones de diseño
-     - 1
-     - 2
-     - 3
-     - 4
+     - Arquitectura orientada a servicios
+     - Computación distribuida
 
 2. Herramientas Usadas
+
+   - Servidor DNS - Cloudflare
+   - CDN - Coudflare
+   - Balanceador de Cargas - AWS ELB
+   - Base de Datos - AWS RDS
+   - Instacias de servidor Web & Bastion - AWS EC2
+   - Sistema de archivos - AWS EFS
+   - Despliegue automatico para tolerancia a fallos - AWS AutoScaling
+   - Manejo de redes y subredes - AWS VPC & Security Groups
 
 ## 6. Otra Informacion
