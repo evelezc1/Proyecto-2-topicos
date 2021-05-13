@@ -55,10 +55,10 @@ https://github.com/evelezc1/Proyecto-2-topicos
 4. Seguridad  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
-   | Redes Privadas/NAT | | |
-   | Autentication de doble factor | | |
-   | Autenticacion SSO - OAuth | | |
-   | Manejo del protocolo HTTPS | | |
+   | Redes Privadas/NAT |Las redes locales tienen en este caso dos direcciones IP privadas que pertenecen a dispositivos específicos de la red. A través de un sistema NAT, estas direcciones privadas se traducen en una dirección IP pública cuando las peticiones salientes de los dispositivos de red se envían a Internet. | En este caso se definieron dos conjuntos de direcciones para redes privadas una para la zona de disponiblidad de A (172.31.1.0/24) y otra para B (172.31.3.0/24) y las NATS respectivas|
+   | Autentication de doble factor |Este es un método de control de acceso en el que a un usuario se le concede acceso al sistema o a una parte del sistema solo después de que presente dos o más pruebas diferentes de que es quien dice ser. |Para esto usamos el pluggin de wordpress llamado "P 2FA – Two-factor Authentication for WordPress" | 
+   | Autenticacion SSO - OAuth | Este es un protocolo de autorización que a diferencia de los de autenticación, este permite la controlar los servicios a los que se puede acceder por parte del usuario autenticado. | Para esto usamos el pluggin de wordpress llamado "OAuth Single Sign On - SSO (OAuth Client)" |
+   | Manejo del protocolo HTTPS |Protocolo que permite establecer una conexión segura entre el servidor y el cliente, que no puede ser interceptada por personas no autorizadas. | En este requisito usamos un listener de ELB con certificados de Let's Encrypt|
 
 ## 5. Diseño Escalable
 
