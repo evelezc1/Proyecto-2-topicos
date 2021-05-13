@@ -39,10 +39,10 @@ https://github.com/evelezc1/Proyecto-2-topicos
 2. Disponibilidad  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
-   | Sistema de monitoreo | | |
-   | Balanceador de carga | | |
-   | Crecimiento Horizontal | | |
-   | Disponibilidad en capa de servicios | | |
+   | Sistema de monitoreo |Este se encarga de hacer un seguimiento del estado, tanto de la infraestructura como de los subsistemas presentes. Su objetivo es asegurar que el sistema es fiable y estable, capaz de proporcionar los servicios para los que ha sido diseñado. | Se utilizó Uptimerobot para la implementación del sistema de monitoreo|
+   | Balanceador de carga |Este se encarga de direccionar a un cliente al servidor web que se encuentre con mayor disponibilidad entre los que cuentan con el mismo contenido. |Se implemento en AWS ELB|
+   | Crecimiento Horizontal | Potenciamos el rendimiento del sistema desde un aspecto de mejora global, teniendo dos zonas de Disponibilidad A - B | Se configuro el AutoScaling group correspondiente que contiene mínimo 2 servidores, máximo 3, y una capacidad de CPU del 60% |
+   | Disponibilidad en capa de servicios |Este se realiza para la conversión de las direcciones de red (NAT) para permitir a las instancias de la subred privada conectarse a Internet o a otros servicios | Se creó una imagen NAT de AMI de la comunidad para proveer este servicio |
    | Disponibilidad en capa de persistencia | | |
 
 3. Rendimiento  
