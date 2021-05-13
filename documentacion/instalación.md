@@ -13,8 +13,12 @@
 
 ## 1. DNS
 
+
+
 ## 2. SSL
 
 ## 3. AWS - Version Monolitica
+
+
 
 ## 4. AWS - Version Escalable
