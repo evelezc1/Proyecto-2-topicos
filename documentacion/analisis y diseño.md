@@ -88,3 +88,5 @@ https://github.com/evelezc1/Proyecto-2-topicos
    - Manejo de redes y subredes - AWS VPC & Security Groups
 
 ## 6. Otra Informacion
+
+Para esta práctica nos basamos en las instrucciones del documento inicial donde se definen funcionalidades y servicios relacionados con la implementación de una aplicación en donde se diseña e implementa una comunidad temática alrededor de las materias y contenidos de las diferentes asignaturas de ingeniería de sistemas en EAFIT (páginas, documentos, foros, chats, eventos, calendario, etc). La cual fue instalada y ejecutada en el ambiente en nube de amazon Amazon Web Services (AWS).
