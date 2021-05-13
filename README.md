@@ -19,7 +19,7 @@ La finalidad del presente repositorio es evidenciar el desarrollo realizado para
 ### Documentación 
 Documentacion requerida para el proyecto. [Click aquí](https://github.com/evelezc1/Proyecto-2-topicos/tree/main/documentacion)
 
-###  Documentación de Instalación
+### Instalación
 Documentación de la instalación. [Click aquí](https://github.com/evelezc1/Proyecto-2-topicos/blob/main/documentacion/instalaci%C3%B3n.md)
 
 ### Análisis y Diseño
