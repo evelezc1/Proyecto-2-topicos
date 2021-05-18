@@ -57,7 +57,7 @@ Para la version escalable, cuando tengamos creado nuestro LoadBalancer:
 ## 3. AWS - Version Monolitica
 
 
-#- Creación de ec2 
+- Creación de ec2-
 
 Para la creación del ec2 utilizamos la Amazon Linux 2 AMI (HVM) SSD Volume Type, dejando por defecto la  configuración de aws pero agregando los puertos:
 
@@ -69,7 +69,7 @@ Eventualmente le asignamos la siguiente IP elástica a la instancia:
 
 Con esto hecho correctamente procedemos a nuestra maquina ec2 ingresando las claves que son suministradas por aws.
 
-#- Instalación de Docker y Docker compose
+- Instalación de Docker y Docker compose
 
 Para esta instalación seguimos la guía de comandos brindada por el profesor.
 
