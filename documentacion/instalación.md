@@ -89,7 +89,26 @@ Con esto logramos tener un servidor instalado de wordpress en docker.
 
 
 
-
 ## 4. AWS - Version Escalable
 
-Se siguio el enunciado propuesto por el profesor.
+Para la version escalable montamos las siguientes configuraciones: 
+
+- Creación y configuración la VPC	
+- Creación y configuración de las subredes.	
+- Creación y configuración del Internet Gateway.	
+-Security Group para los NATs Instance.	
+-Creación de las instancias NAT	
+-Creación y configuración de las tablas de enrutamiento.	
+-Security groups para el Bastion Hosts.	
+-Creación de las instancias Bastion Hosts	
+-Security Group para Tráfico Web	
+-Security Group para Servicio Relacional de Bases de Datos.
+-Creación y configuración de la instancia del servidor de bases de datos en la subred privada.
+-Creación y configuración del sistema de archivos compartidos EFS	
+-Creación y configuración de la Instancia del Servidor Web Wordpress	
+-instalación y configuración el Servidor Web/PHP (wordpress)	
+-Creación de la AMI para para el Servicio de Auto Scaling.	
+-Creación y configuración del balanceador de carga.	
+-Creación y configuración del Grupo de Auto Scaling.	
+	
+Para mas informacion revisar el documento https://drive.google.com/file/d/1SSJYaouGtxkGtn4rL3IMyGCbJQuWf0IZ/view en el cual estan los pasos a seguir para las respectivas configuraciones.
