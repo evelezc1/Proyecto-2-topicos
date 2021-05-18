@@ -18,6 +18,8 @@
 - Copiamos y pegamos los nuevos registros NS en freenom para que el nuevo encargado de gestionar el dominio sea Cloudflare.
 
 Luego de un tiempo de espera, se validará el dominio en cloudflare y podremos crear todos nuestros registros y reglas de direccionamiento desde allí.
+![image](https://user-images.githubusercontent.com/30262251/118589738-99370880-b766-11eb-88c3-faf34d7561a0.png)
+
 
 ## 2. SSL
 
@@ -53,7 +55,31 @@ Para la version escalable, cuando tengamos creado nuestro LoadBalancer:
 
 ## 3. AWS - Version Monolitica
 
-Se siguio el enunciado propuesto por el profesor.
+
+- Creación de ec2 
+Para la creación del ec2 utilizamos la Amazon Linux 2 AMI (HVM) SSD Volume Type, dejando por defecto la  configuración de aws pero agregando los puertos:
+ ![image](https://user-images.githubusercontent.com/30262251/118589531-27f75580-b766-11eb-9cde-fc255e67e800.png)
+Eventualmente le asignamos la siguiente IP elástica a la instancia:
+![image](https://user-images.githubusercontent.com/30262251/118589558-39d8f880-b766-11eb-9706-82b7e11a863f.png)
+Con esto hecho correctamente procedemos a nuestra maquina ec2 ingresando las claves que son suministradas por aws.
+
+- Instalación de Docker y Docker compose
+Para esta instalación seguimos la guía de comandos brindada por el profesor.
+![image](https://user-images.githubusercontent.com/30262251/118589639-612fc580-b766-11eb-88c5-19ac0c829771.png)
+Posteriormente descargamos las imágenes de wordpress de docker-hub, el docker-compose.yml (cambiando el puerto por defecto al 80). Y continuamos con los comandos:
+
+```bash
+$ docker-compose down (detener el servidor de wordpress)
+```
+
+```bash
+$ docker-compose up -d (iniciar el servidor de wordpress)
+```
+Con esto logramos tener un servidor instalado de wordpress en docker. 
+
+
+
+
 
 ## 4. AWS - Version Escalable
 
