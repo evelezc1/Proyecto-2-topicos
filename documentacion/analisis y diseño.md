@@ -28,15 +28,13 @@
 https://github.com/evelezc1/Proyecto-2-topicos
 
 ## 4. Requisitos
+   | Requisito | 
+   |------------|
+   |Disponibilidad |
+   |Rendimiento | 
+   |Seguridad | 
 
-1. Funcionales y No Funcionales  
-   | Requisito | Descripcion | Implementacion |
-   |------------|-------------|----------------|
-   | | | |
-   | | | |
-   | | | |
-
-2. Disponibilidad  
+1.2. Disponibilidad  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
    | Sistema de monitoreo |Este se encarga de hacer un seguimiento del estado, tanto de la infraestructura como de los subsistemas presentes. Su objetivo es asegurar que el sistema es fiable y estable, capaz de proporcionar los servicios para los que ha sido diseñado. | Se utilizó Uptimerobot para la implementación del sistema de monitoreo|
@@ -45,14 +43,14 @@ https://github.com/evelezc1/Proyecto-2-topicos
    | Disponibilidad en capa de servicios |Este se realiza para la conversión de las direcciones de red (NAT) para permitir a las instancias de la subred privada conectarse a Internet o a otros servicios | Se creó una imagen NAT de AMI de la comunidad para proveer este servicio |
    | Disponibilidad en capa de persistencia | Este permite el cifrado de archivos a nivel de sistema | |
 
-3. Rendimiento  
+1.3. Rendimiento  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
    | Tiempo de respuesta | | |
    | Concurrencia | | |
    | CDN & Caching | | |
 
-4. Seguridad  
+1.4. Seguridad  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
    | Redes Privadas/NAT |Las redes locales tienen en este caso dos direcciones IP privadas que pertenecen a dispositivos específicos de la red. A través de un sistema NAT, estas direcciones privadas se traducen en una dirección IP pública cuando las peticiones salientes de los dispositivos de red se envían a Internet. | En este caso se definieron dos conjuntos de direcciones para redes privadas una para la zona de disponiblidad de A (172.31.1.0/24) y otra para B (172.31.3.0/24) y las NATS respectivas|
