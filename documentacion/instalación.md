@@ -93,30 +93,77 @@ Con esto logramos tener un servidor instalado de wordpress en docker.
 
 Para la version escalable montamos las siguientes configuraciones: 
 
-- Creación y configuración la VPC: 
+#### Creación y configuración la VPC: 
 
-En la consola de AWS seleccione el servicio de VPC.
-En el panel izquierdo seleccione la opción de “Your VPCs”
-Click en Create VPC.
-Name: MyWebAPP-VPC
-IPv4 CIDR block: 172.31.0.0/16
-Click “Create VPC”
-Debe aparecer mensaje de que la VPC se ha creado de manera exitosa.
-En el panel izquierdo seleccione “Your VPCs”. Se debe visualizar la VPC por defecto y la nueva VPC que se ha configurado con el rango de direcciones 172.31.0.0/16.
+●	En la consola de AWS seleccione el servicio de VPC.
+●	En el panel izquierdo seleccione la opción de “Your VPCs”
+●	Click en Create VPC.
+o	Name: MyWebAPP-VPC
+o	IPv4 CIDR block: 172.31.0.0/16
+o	Click “Create VPC”
+o	Debe aparecer mensaje de que la VPC se ha creado de manera exitosa.
+●	En el panel izquierdo seleccione “Your VPCs”. Se debe visualizar la VPC por defecto y la nueva VPC que se ha configurado con el rango de direcciones 172.31.0.0/16.
 
-
-- Creación y configuración de las subredes.
-
+#### Creación y configuración de las subredes:
 
 
+●	En la sección de VPC, en el panel izquierdo, localice la opción de “Subnets”.
+●	Click en “Subnets”.
+●	Click en “Create subnet”. 
+
+Primero crearemos la subred privada y luego la pública.
+
+o	Name tag: Private Subnet A
+o	VPC*: Seleccione MyWebApp-VPC
+o	Availability Zone: Seleccione la primera zona disponible.
+o	IPv4 CIDR block*: 172.31.1.0/24
+o	Debe aparecer un mensaje que la subred fue creada de manera exitosa.
+
+Otra vez, click en “Create subnet” para crear la subred privada.
+
+o	Name tag: Public Subnet A
+o	VPC*: Seleccione MyWebApp-VPC
+o	Availability Zone: Seleccione la primera zona disponible.
+o	IPv4 CIDR block*: 172.31.2.0/24
+o	Debe aparecer un mensaje que la subred fue creada de manera exitosa.
+
+Otra vez, click en “Create subnet” para crear la subred privada.
+
+o	Name tag: Private Subnet B
+o	VPC*: Seleccione MyWebApp-VPC
+o	Availability Zone: Seleccione la segunda  zona disponible.
+o	IPv4 CIDR block*: 172.31.3.0/24
+o	Debe aparecer un mensaje que la subred fue creada de manera exitosa.
+
+Otra vez, click en “Create subnet” para crear la subred privada.
+
+o	Name tag: Public Subnet B
+o	VPC*: Seleccione MyWebApp-VPC
+o	Availability Zone: Seleccione la segunda zona disponible.
+o	IPv4 CIDR block*: 172.31.4.0/24
+o	Debe aparecer un mensaje que la subred fue creada de manera exitosa.
 
 
-- Creación y configuración del Internet Gateway.	
-- Security Group para los NATs Instance.	
-- Creación de las instancias NAT	
-- Creación y configuración de las tablas de enrutamiento.	
-- Security groups para el Bastion Hosts.	
-- Creación de las instancias Bastion Hosts	
+#### Creación y configuración del Internet Gateway.
+
+●	En la sección de VPC, en el panel izquierdo, localice la opción de “Internet Gateway”.
+●	Click en Internet Gateways.
+●	Click en internet Gateway.
+o	Name tag: MyWebVPC-IGW
+●	Click en Create Internet gateway.
+●	Debe aparecer mensaje que el Internet Gateway fue creado de manera exitosa.
+●	Ahora, se debe asociar el Internet Gateway a la VPC.
+●	Seleccione el internet Gateway creado: MyWebApp-IGW
+●	Click en “Actions” y click en “Attach to VPC”.
+●	En Available VPCs seleccione MyWebApp-VPC.
+●	Click en “Attach Internet Gateway”.
+
+
+
+#### Security Group para los NATs Instance.	
+#### Creación de las instancias NAT	
+#### Creación y configuración de las tablas de enrutamiento.	
+#### Creación de las instancias Bastion Hosts	
 - Security Group para Tráfico Web	
 - Security Group para Servicio Relacional de Bases de Datos.
 - Creación y configuración de la instancia del servidor de bases de datos en la subred privada.
