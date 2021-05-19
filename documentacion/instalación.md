@@ -198,16 +198,215 @@ o	Name tag: MyWebVPC-IGW
 ●	Click en “Attach Internet Gateway”.
 
 
+#### Security Group para los NATs Instance.
 
-#### Security Group para los NATs Instance.	
+
+En el servicio de VPC, escoja la opción “create security group” y configure los siguientes parámetros:
+
+●	Security group name: SG-NAT-Instance
+
+●	Description: Enable outgoing traffic from private subnet to Internet
+
+●	VPC: MyWebApp-VPC
+
+
+De click en “create security group”. Una vez esté creado vamos a agregar las reglas de tráfico de entrada a este. En la pestaña de “Inbound rules”:
+
+● Click en “Edit inbound rules”. Click “Add rule”. Configure los siguientes parámetros:
+
+o Type: HTTP
+
+o Source: 172.31.1.0/24
+
+o Description: Allow inbound HTTP traffic from servers in the private subnet.
+
+● Click en “Edit inbound rules”. Click “Add rule”. Configure los siguientes parámetros:
+
+o Type: https
+
+o Source: 172.31.2.0/24
+
+o Description: Allow inbound HTTPS traffic from servers in the private subnet
+
+● Click en “Edit inbound rules”. Click “Add rule”. Configure los siguientes parámetros:
+
+o Type: http
+
+o Source172.31.3.0/24
+
+o Description: Allow inbound HTTP traffic from servers in the private subnet
+
+● Click en “Edit inbound rules”. Click “Add rule”. Configure los siguientes parámetros:
+
+o Type: https
+
+o Source: 172.31.4.0/24
+
+o Description: Allow inbound HTTPS traffic from servers in the private subnet
+
+● Click en “Edit inbound rules”. Click “Add rule”. Configure los siguientes parámetros:
+
+o Type: ssh
+
+o Source: MyIP
+
+o Description: Allow inbound SSH access to the NAT instance from your home network (over the internet gateway)
+
 #### Creación de las instancias NAT	
+
+En esta sección se presenta como configuraremos una instancia de NAT. Esta instancia permite enviar tráfico de los equipos que están en la red privada hacia Internet en cada. Para esto, diríjase al “home” de la consola de administración de AWS. Escoja el servicio de EC2. En el panel izquierdo seleccione la opción de “Instances” seleccione la opción “launch instances” y ejecute lo siguientes pasos:
+
+**NAT Instance AZ-A:**
+
+● Busque la imagen: amzn-ami-vpc-nat-hvm-2018.03.0.20181116-x86\_64-ebs
+
+● Seleccione Amazon Linux AMI 2018.03.0.20181116 x86\_64 VPC HVM ebs. Click en select.
+
+● Seleccione el tipo de instancia t2.micro (columna type) y click en “Next:Configure Instance details”.
+
+● Ahora configure, los siguientes parámetros:
+
+o Network: MyWebAPP-VPC
+
+o Subnet: Public Subnet A.
+
+o Auto-assign Public IP: Enable
+
+● Click en “Next:Add storage”.
+
+● Click en “Next:Add tags”.
+
+o Key: Name.
+
+o Value: NAT-Instance.
+
+● Click en “Next:Configure security group”:
+
+o Seleccione la opción de un security group existente. Seleccione “SG-NAT-Instance”
+
+● Click en “Next:Review instance and launch”.
+
+● Click en “Launch”.
+
+● Seleccione an existing key pair or create a new key pair.
+
+o Seleccione el key pair que ud ha creado para el curso.
+
+Finalmente, y, dado que es una NAT instance, para que trabaje de forma adecuada se debe detener la característica de “source/destination checking”. Para esto realice lo siguiente:
+
+● Seleccione el servicio de EC2. En el panel izquierdo click en instances. Click en Running instances.
+
+● Seleccione la casilla de “NAT Instance” desplegada.
+
+● Click en “Actions”. Click en Networking. Click en “Change source/destination check”.
+
+● Seleccione la casilla “Stop”.
+
+● Click en “Save”.
+
+Crear y configurar las tablas de enrutamiento.
+
+En esta subsección vamos a crear cuatro tablas de enrutamiento (dos por cada AZ), una asociada a cada subred que hemos definido. Igualmente vamos a configurar que la ruta por defecto de cada una de estas tablas de enrutamiento
+
+● Click en “Create route table” para crear la tabla de enrutamiento para la subred privada.
+
+o Name tag: Private Route Table A
+
+o VPC: MyWebAPP-VPC
+
+o Click en “create”.
+
+● Click en “Create route table” para crear la tabla de enrutamiento para la subred pública.
+
+o Name tag: Public Route Table A
+
+o VPC: MyWebAPP-VPC
+
+o Click en “create”.
+
+● Click en “Create route table” para crear la tabla de enrutamiento para la subred privada.
+
+o Name tag: Private Route Table B
+
+o VPC: MyWebAPP-VPC
+
+o Click en “create”.
+
+● Click en “Create route table” para crear la tabla de enrutamiento para la subred pública.
+
+o Name tag: Public Route Table B
+
+o VPC: MyWebAPP-VPC
+
+o Click en “create”.
+
+Ahora se debe crear las rutas por defecto. Para el caso de la subred privada, el tráfico debe ser enviado al NAT Gateway. Para esto en el panel izquierdo, seleccione la opción de Route Tables. Seleccione la subred privada “Private Route Table” y abajo, en el panel de “Routes”
+
+● Click en “Edit routes”.
+
+● Click en “Add route”.
+
+o Destination: 0.0.0.0/0
+
+o Target: Seleccione la instancia del NAT Gateway (NAT-GW-Instance) que se desplegó para cada AZ.
+
+● Click en “Save routes”.
+
+● Debe observar el mensaje de que la ruta se ha editado de manera exitosa.
+
+Por otro lado, para el caso de la red pública, este tráfico debe ser enviado al Internet Gateway. Para esto en el panel izquierdo, seleccione la opción de Route Tables. Seleccione la subred pública “Public Route Table” y abajo, en el panel de “Routes”
+
+● Click en “Edit routes”.
+
+● Click en “Add route”.
+
+o Destination: 0.0.0.0/0
+
+o Target: Seleccione el Internet Gateway (MyWebApp-IGW).
+
+● Click en “Save routes”.
+
+● Debe observar el mensaje de que la ruta se ha editado de manera exitosa.
+
+Ahora debemos asociar a cada tabla de enrutamiento, las subredes. Seleccione la “Private Route Table A” y en la pestaña de “Subnet Associations”:
+
+● Click en “Edit subnet associations”.
+
+● Marque la casilla de la subred privada 172.31.1.0/24.
+
+● Click en Save.
+
+Ahora debemos asociar a cada tabla de enrutamiento, las subredes. Seleccione la “Private Route Table B” y en la pestaña de “Subnet Associations”:
+
+● Click en “Edit subnet associations”.
+
+● Marque la casilla de la subred privada 172.31.3.0/24.
+
+● Click en Save.
+
+Para el caso de las subredes públicas, seleccione la “Public Route Table A” y en la pestaña de “Subnet Associations”:
+
+● Click en “Edit subnet associations”.
+
+● Marque la casilla de la subred privada 172.31.2.0/24.
+
+● Click en Save.
+
+Ahora, seleccione la “Public Route Table B” y en la pestaña de “Subnet Associations”:
+
+● Click en “Edit subnet associations”.
+
+● Marque la casilla de la subred privada 172.31.4.0/24.
+
+● Click en Save.
+
 #### Creación y configuración de las tablas de enrutamiento.	
 #### Creación de las instancias Bastion Hosts	
-- Security Group para Tráfico Web	
-- Security Group para Servicio Relacional de Bases de Datos.
-- Creación y configuración de la instancia del servidor de bases de datos en la subred privada.
-- Creación y configuración del sistema de archivos compartidos EFS	
-- Creación y configuración de la Instancia del Servidor Web Wordpress	
+#### Security Group para Tráfico Web	
+#### Security Group para Servicio Relacional de Bases de Datos.
+#### Creación y configuración de la instancia del servidor de bases de datos en la subred privada.
+#### Creación y configuración del sistema de archivos compartidos EFS	
+#### Creación y configuración de la Instancia del Servidor Web Wordpress	
 - instalación y configuración el Servidor Web/PHP (wordpress)	
 - Creación de la AMI para para el Servicio de Auto Scaling.	
 - Creación y configuración del balanceador de carga.	
