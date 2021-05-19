@@ -95,76 +95,21 @@ Para la version escalable montamos las siguientes configuraciones:
 
 - Creación y configuración la VPC: 
 
- En la consola de AWS seleccione el servicio de VPC, luego en el panel izquierdo seleccione la opción de “Your VPCs”
- 
-o Click en Create VPC.
-
- Name: MyWebAPP-VPC
-
- IPv4 CIDR block: 172.31.0.0/16
-
-o Click “Create VPC”
-
- Debe aparecer mensaje de que la VPC se ha creado de manera exitosa.
-
-o En el panel izquierdo seleccione “Your VPCs”. Se debe visualizar la VPC por defecto y la nueva
-
-la VPC se configuro con el rango de direcciones. 172.31.0.0/16.
+En la consola de AWS seleccione el servicio de VPC.
+En el panel izquierdo seleccione la opción de “Your VPCs”
+Click en Create VPC.
+Name: MyWebAPP-VPC
+IPv4 CIDR block: 172.31.0.0/16
+Click “Create VPC”
+Debe aparecer mensaje de que la VPC se ha creado de manera exitosa.
+En el panel izquierdo seleccione “Your VPCs”. Se debe visualizar la VPC por defecto y la nueva VPC que se ha configurado con el rango de direcciones 172.31.0.0/16.
 
 
 - Creación y configuración de las subredes.
 
-En la sección de VPC, en el panel izquierdo, localice la opción de “Subnets”.
 
-o Click en “Subnets”.
 
-o Click en “Create subnet”. Primero crearemos la subred privada y luego la pública.
 
-Name tag: Private Subnet A
-
-VPC\*: Seleccione MyWebApp-VPC
-
-Availability Zone: Seleccione la primera zona disponible.
-
-IPv4 CIDR block\*: 172.31.1.0/24
-
-Debe aparecer un mensaje que la subred fue creada de manera exitosa.
-
-o Otra vez, click en “Create subnet” para crear la subred privada.
-
-Name tag: Public Subnet A
-
-VPC\*: Seleccione MyWebApp-VPC
-
-Availability Zone: Seleccione la primera zona disponible.
-
-IPv4 CIDR block\*: 172.31.2.0/24
-
-Debe aparecer un mensaje que la subred fue creada de manera exitosa.
-
-o Otra vez, click en “Create subnet” para crear la subred privada.
-
-Name tag: Private Subnet B
-
-VPC\*: Seleccione MyWebApp-VPC
-
-Availability Zone: Seleccione la segunda zona disponible.
-
-IPv4 CIDR block\*: 172.31.3.0/24
-
-Debe aparecer un mensaje que la subred fue creada de manera exitosa.
-
-o Otra vez, click en “Create subnet” para crear la subred privada.
-
-Name tag: Public Subnet B
-
-VPC\*: Seleccione MyWebApp-VPC
-
-Availability Zone: Seleccione la segunda zona disponible.
-
-IPv4 CIDR block\*: 172.31.4.0/24
-
-o Debe aparecer un mensaje que la subred fue creada de manera exitosa.
 
 - Creación y configuración del Internet Gateway.	
 - Security Group para los NATs Instance.	
