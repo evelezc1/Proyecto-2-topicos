@@ -46,8 +46,7 @@ https://github.com/evelezc1/Proyecto-2-topicos
 1.3. Rendimiento  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
-   | Tiempo de respuesta | El tiempo de respuesta del servidor (response time en inglés), es el tiempo en segundos o fracciones de segundo necesario, para hacer la petición y recibir el contenido HTML de una página determinada |  |
-   | Concurrencia |Concurrencia es la tendencia de las cosas a producirse al mismo tiempo en un sistema. | |
+   | Tiempo de respuesta | El tiempo de respuesta del servidor (response time en inglés), es el tiempo en segundos o fracciones de segundo necesario, para hacer la petición y recibir el contenido HTML de una página determinada | En este caso con la ayuda de pagespeed de google, identificamos muy buen tiempo de respuesta.  |
    | CDN & Caching | Este se usa para minimizar los retrasos en la carga de contenidos de páginas web al reducir la distancia física entre el servidor y el usuario. |En este caso de delegó el manejo de servicios del DNS desde el Freenom hasta el CloudFlare|
 
 1.4. Seguridad  
@@ -88,3 +87,9 @@ https://github.com/evelezc1/Proyecto-2-topicos
 ## 6. Otra Informacion
 
 Para esta práctica nos basamos en las instrucciones del documento inicial donde se definen funcionalidades y servicios relacionados con la implementación de una aplicación en donde se diseña e implementa una comunidad temática alrededor de las materias y contenidos de las diferentes asignaturas de ingeniería de sistemas en EAFIT (páginas, documentos, foros, chats, eventos, calendario, etc). La cual fue instalada y ejecutada en el ambiente en nube de amazon Amazon Web Services (AWS).
+
+- ![image](https://user-images.githubusercontent.com/30262251/118755791-25146780-b82f-11eb-9c1f-5dd27ec7dcc1.png)
+
+- En esta imagen podemos evidenciar que el tiempo de interactivo (el cual es una métrica que calcula el tiempo que tarda un sitio web en ser visible e interactivo para el visitante.) se encuentra en un rango muy bueno, ademas de otras metricas que demuestran las buenas practicas empleadas. 
+
+
