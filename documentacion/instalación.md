@@ -93,7 +93,25 @@ Con esto logramos tener un servidor instalado de wordpress en docker.
 
 Para la version escalable montamos las siguientes configuraciones: 
 
-- Creación y configuración la VPC	
+- Creación y configuración la VPC: 
+
+ En la consola de AWS seleccione el servicio de VPC, luego en el panel izquierdo seleccione la opción de “Your VPCs”
+ 
+● Click en Create VPC.
+
+ Name: MyWebAPP-VPC
+
+ IPv4 CIDR block: 172.31.0.0/16
+
+● Click “Create VPC”
+
+ Debe aparecer mensaje de que la VPC se ha creado de manera exitosa.
+
+● En el panel izquierdo seleccione “Your VPCs”. Se debe visualizar la VPC por defecto y la nueva
+
+VPC que se configuro con el rango de direcciones. 172.31.0.0/16.
+
+
 - Creación y configuración de las subredes.	
 - Creación y configuración del Internet Gateway.	
 - Security Group para los NATs Instance.	
