@@ -15,7 +15,7 @@
 
 ## 1. Integrantes
 
-- Estefania Velez Cortez <evelezc1@eafit.edu.co>
+- Estefania Velez Cortes <evelezc1@eafit.edu.co>
 - Juan Camilo Marin Navia <jcmarinn@eafit.edu.co>
 
 ## 2. Roles
