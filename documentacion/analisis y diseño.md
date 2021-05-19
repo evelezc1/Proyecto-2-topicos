@@ -46,7 +46,7 @@ https://github.com/evelezc1/Proyecto-2-topicos
 1.3. Rendimiento  
    | Requisito | Descripcion | Implementacion |
    |------------|-------------|----------------|
-   | Tiempo de respuesta | El tiempo de respuesta del servidor (response time en inglés), es el tiempo en segundos o fracciones de segundo necesario, para hacer la petición y recibir el contenido HTML de una página determinada | |
+   | Tiempo de respuesta | El tiempo de respuesta del servidor (response time en inglés), es el tiempo en segundos o fracciones de segundo necesario, para hacer la petición y recibir el contenido HTML de una página determinada |  |
    | Concurrencia |Concurrencia es la tendencia de las cosas a producirse al mismo tiempo en un sistema. | |
    | CDN & Caching | Este se usa para minimizar los retrasos en la carga de contenidos de páginas web al reducir la distancia física entre el servidor y el usuario. |En este caso de delegó el manejo de servicios del DNS desde el Freenom hasta el CloudFlare|
 
