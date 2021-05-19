@@ -256,7 +256,7 @@ o Description: Allow inbound SSH access to the NAT instance from your home netwo
 
 En esta sección se presenta como configuraremos una instancia de NAT. Esta instancia permite enviar tráfico de los equipos que están en la red privada hacia Internet en cada. Para esto, diríjase al “home” de la consola de administración de AWS. Escoja el servicio de EC2. En el panel izquierdo seleccione la opción de “Instances” seleccione la opción “launch instances” y ejecute lo siguientes pasos:
 
-**NAT Instance AZ-A:**
+##### NAT Instance AZ-A:
 
 ● Busque la imagen: amzn-ami-vpc-nat-hvm-2018.03.0.20181116-x86\_64-ebs
 
@@ -430,21 +430,15 @@ o Description: Allow ssh traffic
 
 En esta sección crearemos una instancia EC2 la cual actuará como Host Bastion. Recuerde que esta VM estará asociada a la subred pública de la VPC por cada zona de disponibilidad.
 
-## **Bastion Host AZ-A:**
+##### Bastion Host AZ-A:
 
-Diríjase al “home” de la consola de administración de AWS. Escoja el servicio de EC2. En el panel
-
-izquierdo seleccione la opción de “Instances” seleccione la opción “launch instances” y ejecute lo
-
-siguientes pasos:
+Diríjase al “home” de la consola de administración de AWS. Escoja el servicio de EC2. En el panel izquierdo seleccione la opción de “Instances” seleccione la opción “launch instances” y ejecute lo siguientes pasos:
 
 ● Escoja la imagen de Amazon Machine Image (A|MI) la cual contiene la imagen del sistema
 
 operativo. Seleccione Amazon Linux 2 AMI (HVM), SSD Volume Type (click select).
 
-● Seleccione el tipo de instancia t2.micro (columna type) y click. En “Next:Configure Instance
-
-details”.
+● Seleccione el tipo de instancia t2.micro (columna type) y click. En “Next:Configure Instance details”.
 
 ● Ahora configure, los siguientes parámetros:
 
@@ -474,7 +468,7 @@ o Seleccione la opción de un security group existente. Seleccione “SG-Bastion
 
 o Seleccione el key pair que ud ha creado para el curso.
 
-## **Bastion Host AZ-B:**
+##### Bastion Host AZ-B:
 
 Diríjase al “home” de la consola de administración de AWS. Escoja el servicio de EC2. En el panel izquierdo seleccione la opción de “Instances” seleccione la opción “launch instances” y ejecute lo siguientes pasos:
 
@@ -578,7 +572,7 @@ De esta forma se configura el security group de la bases de datos para aceptar l
 
 
 #### Creación y configuración de la instancia del servidor de bases de datos en la subred privada.
-## **Crear el grupo de subred para el servicio RDS.**
+##### Crear el grupo de subred para el servicio RDS.
 Antes que cualquier y con el fin de emplear el servicio de RDS, se debe crear un subnet group el cual es usado para decirle a la bases de datos cuales subredes pueden ser usadas por ésta. Cada subnet group de bases de datos, requiere tener subredes al menos en dos zonas de disponibilidad (AZ).
 
 ● En la sección de servicios, escoja RDS.
@@ -603,7 +597,7 @@ o VPC: MyWebbApp-VPC
 
 Este grupo de subred de bases de datos va a ser utilizado para desplegar el motor de bases de datos.
 
-## **Crear una instancia de Amazon RDS.**
+##### Crear una instancia de Amazon RDS.
 
 En esta sección se procederá a desplegar una instancia de bases de datos de MySql en un entorno de múltiples zonas de disponibilidad. Cuando se lanza este servicio, de manera automática amazon crea una instancia principal de la bases de datos y sincroniza los datos con una estancia secundaria que despliega en una zona de disponibilidad diferente en la cual desplegó la primera instancia.
 
