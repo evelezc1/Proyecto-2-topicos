@@ -89,7 +89,6 @@ https://github.com/evelezc1/Proyecto-2-topicos
 Para esta práctica nos basamos en las instrucciones del documento inicial donde se definen funcionalidades y servicios relacionados con la implementación de una aplicación en donde se diseña e implementa una comunidad temática alrededor de las materias y contenidos de las diferentes asignaturas de ingeniería de sistemas en EAFIT (páginas, documentos, foros, chats, eventos, calendario, etc). La cual fue instalada y ejecutada en el ambiente en nube de amazon Amazon Web Services (AWS).
 
 - ![image](https://user-images.githubusercontent.com/30262251/118755791-25146780-b82f-11eb-9c1f-5dd27ec7dcc1.png)
-
 - En esta imagen podemos evidenciar que el tiempo de interactivo (el cual es una métrica que calcula el tiempo que tarda un sitio web en ser visible e interactivo para el visitante.) se encuentra en un rango muy bueno, ademas de otras metricas que demuestran las buenas practicas empleadas. 
 
 
